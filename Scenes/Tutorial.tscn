@@ -9,10 +9,16 @@
 position = Vector2(-13, 12)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_wduq8")]
-position = Vector2(94, -35)
+position = Vector2(92, 12)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("1_wduq8")]
-position = Vector2(231, -64)
+position = Vector2(198, 11)
+
+[node name="StaticBody2D3" parent="StaticBody2D3" instance=ExtResource("1_wduq8")]
+position = Vector2(105, 0)
+
+[node name="StaticBody2D3" parent="StaticBody2D3/StaticBody2D3" instance=ExtResource("1_wduq8")]
+position = Vector2(105, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_2o727")]
 position = Vector2(-30, -73)

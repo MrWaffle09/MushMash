@@ -19,12 +19,3 @@ texture = ExtResource("2_6t5aa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
-
-[node name="Dash_Timer" type="Timer" parent="."]
-wait_time = 0.2
-
-[node name="canDash_Timer" type="Timer" parent="."]
-wait_time = 2.0
-
-[connection signal="timeout" from="Dash_Timer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="canDash_Timer" to="." method="_on_can_dash_timer_timeout"]
