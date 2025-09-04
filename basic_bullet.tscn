@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx6ftbreibkmj"]
+
+[ext_resource type="Script" uid="uid://b5si48ub2jewi" path="res://basic_bullet.gd" id="1_g5mon"]
+[ext_resource type="Texture2D" uid="uid://dvb8gmemmtxdx" path="res://Assets/RedSquare.png" id="2_huxur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gk5x6"]
+
+[node name="BasicBullet" type="CharacterBody2D"]
+script = ExtResource("1_g5mon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.0237566, 0.0282608)
+texture = ExtResource("2_huxur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gk5x6")

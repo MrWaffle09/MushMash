@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj0bmxgm5eeny"]
+[gd_scene load_steps=4 format=3 uid="uid://dj0bmxgm5eeny"]
 
 [ext_resource type="PackedScene" uid="uid://ik3patqxdw5t" path="res://Scenes/BasicGround.tscn" id="1_wduq8"]
 [ext_resource type="PackedScene" uid="uid://di06fjy0wpbgy" path="res://Scenes/player.tscn" id="2_2o727"]
+[ext_resource type="PackedScene" uid="uid://b2jbn5xhk7ren" path="res://cow.tscn" id="3_uo1fs"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,3 +23,12 @@ position = Vector2(105, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_2o727")]
 position = Vector2(-30, -73)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_wduq8")]
+position = Vector2(77, -113)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("1_wduq8")]
+position = Vector2(303, -116)
+
+[node name="Cow" parent="." instance=ExtResource("3_uo1fs")]
+position = Vector2(202, -79)

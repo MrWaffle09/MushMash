@@ -10,7 +10,11 @@ const DASH_SPEED = 900
 
 var dashing = false
 var can_dash = true
+var health = 5
 
+#handles Death
+func die():
+	pass
 
 #Changes Gravity When Falling
 func fall_grav(velocity: Vector2):
@@ -45,15 +49,26 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("Move_Left", "Move_Right")
 	if direction:
+		$AnimatedSprite2D.play("Run")
 		if dashing:
 				velocity.x = direction * DASH_SPEED
 		else:
 			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		$AnimatedSprite2D.play("Idle")
+	
+	#flips sprite based on direction
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
 	move_and_slide()
 	
+	
+	#handles damage
+	if health <= 0:
+		pass
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
